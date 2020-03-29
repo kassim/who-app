@@ -1,6 +1,7 @@
 import 'package:WHOFlutter/components/page_header.dart';
 import 'package:WHOFlutter/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:share/share.dart';
 
 class ListOfItems extends StatelessWidget {
@@ -85,17 +86,29 @@ class ListItem extends StatelessWidget {
 }
 
 class EmojiHeader extends StatelessWidget {
-  EmojiHeader(this.emoji);
-
   final String emoji;
+  final String svg;
+
+  EmojiHeader(this.emoji) : svg = null;
+
+  EmojiHeader.fromSvg(this.svg) : emoji = null;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        this.emoji,
-        textScaleFactor: 6,
-      ),
-    );
+    if (svg != null) {
+      return Center(
+          child: SvgPicture.asset(
+        svg,
+        height: 72,
+        width: 72,
+      ));
+    } else {
+      return Center(
+        child: Text(
+          this.emoji,
+          textScaleFactor: 6,
+        ),
+      );
+    }
   }
 }

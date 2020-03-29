@@ -19,7 +19,7 @@ class TravelAdvice extends StatelessWidget {
         message:  S.of(context).travelAdviceListOfItemsPageListItem4
       ),
       ListItem(
-        titleWidget: EmojiHeader("🧼"),
+        titleWidget: EmojiHeader.fromSvg("assets/emojis/soap.svg"),
         message:  S.of(context).travelAdviceListOfItemsPageListItem5
       ),
       ListItem(
