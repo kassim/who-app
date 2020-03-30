@@ -1,11 +1,10 @@
 import 'package:WHOFlutter/generated/intl/messages_ar.dart';
+import 'package:WHOFlutter/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:WHOFlutter/generated/l10n.dart';
-import 'package:WHOFlutter/pages/who_myth_busters.dart';
 
 void main() {
   final TestWidgetsFlutterBinding binding =
@@ -31,8 +30,6 @@ void main() {
           (WidgetTester tester) async {
         // Increasing the default viewport size to avoid RenderFlex overflow error
         await binding.setSurfaceSize(Size(800, 800));
-        await tester.pumpWidget(
-            testableWidget(child: WhoMythBusters(), locale: Locale('ar', 'SA')));
         await tester.pumpAndSettle();
         expect(
             find.text(MessageLookup().lookupMessage(
@@ -48,8 +45,6 @@ void main() {
           (WidgetTester tester) async {
         // Increasing the default viewport size to avoid RenderFlex overflow error
         await binding.setSurfaceSize(Size(800, 800));
-        await tester.pumpWidget(
-            testableWidget(child: WhoMythBusters(), locale: Locale('ar', 'SA')));
         await tester.pumpAndSettle(Duration(seconds: 1));
         // Performs Swipe Left action
         await tester.flingFrom(Offset(400, 400), Offset(-100, 0), 800);
@@ -81,8 +76,6 @@ void main() {
       (WidgetTester tester) async {
     // Increasing the default viewport size to avoid RenderFlex overflow error
     await binding.setSurfaceSize(Size(800, 800));
-    await tester
-        .pumpWidget(testableWidget(child: WhoMythBusters(), locale: Locale('ar')));
     await tester.pumpAndSettle();
     expect(
         find.text(MessageLookup().lookupMessage(
@@ -98,8 +91,6 @@ void main() {
       (WidgetTester tester) async {
     // Increasing the default viewport size to avoid RenderFlex overflow error
     await binding.setSurfaceSize(Size(800, 800));
-    await tester
-        .pumpWidget(testableWidget(child: WhoMythBusters(), locale: Locale('ar')));
     await tester.pumpAndSettle(Duration(seconds: 1));
     // Performs Swipe Left action
     await tester.flingFrom(Offset(400, 400), Offset(-100, 0), 800);

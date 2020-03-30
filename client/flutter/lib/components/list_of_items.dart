@@ -86,29 +86,17 @@ class ListItem extends StatelessWidget {
 }
 
 class EmojiHeader extends StatelessWidget {
-  final String emoji;
-  final String svg;
+  final String assetPath;
 
-  EmojiHeader(this.emoji) : svg = null;
-
-  EmojiHeader.fromSvg(this.svg) : emoji = null;
+  EmojiHeader(this.assetPath);
 
   @override
   Widget build(BuildContext context) {
-    if (svg != null) {
-      return Center(
-          child: SvgPicture.asset(
-        svg,
-        height: 72,
-        width: 72,
-      ));
-    } else {
-      return Center(
-        child: Text(
-          this.emoji,
-          textScaleFactor: 6,
-        ),
-      );
-    }
+    return Center(
+        child: SvgPicture.asset(
+          assetPath,
+          height: 72,
+          width: 72,
+        ));
   }
 }

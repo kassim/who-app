@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:WHOFlutter/generated/l10n.dart';
-import 'package:WHOFlutter/pages/who_myth_busters.dart';
 
 void main() {
   final TestWidgetsFlutterBinding binding =
@@ -28,7 +27,6 @@ void main() {
       (WidgetTester tester) async {
     // Increasing the default viewport size to avoid RenderFlex overflow error
     await binding.setSurfaceSize(Size(800, 800));
-    await tester.pumpWidget(testableWidget(child: WhoMythBusters()));
     await tester.pumpAndSettle();
     expect(
         find.text(
@@ -40,7 +38,6 @@ void main() {
       (WidgetTester tester) async {
     // Increasing the default viewport size to avoid RenderFlex overflow error
     await binding.setSurfaceSize(Size(800, 800));
-    await tester.pumpWidget(testableWidget(child: WhoMythBusters()));
     await tester.pumpAndSettle(Duration(seconds: 1));
     // Performs Swipe Left action
     await tester.flingFrom(Offset(400, 400), Offset(-100, 0), 800);

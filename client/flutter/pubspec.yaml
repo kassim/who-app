@@ -43,7 +43,7 @@ flutter:
     - assets/onboarding/
     - assets/travel_advice/
     - assets/content_bundles/
-    - assets/emojis/soap.svg
+    - assets/emojis/
 
 flutter_intl:
   enabled: true
