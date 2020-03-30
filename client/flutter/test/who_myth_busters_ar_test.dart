@@ -12,20 +12,6 @@ void main() {
 
   final Locale locale = Locale('ar');
 
-  Widget testableWidget({Widget child, Locale locale}) {
-    return MaterialApp(
-      title: "WHO",
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        S.delegate
-      ],
-      locale: locale,
-      supportedLocales: S.delegate.supportedLocales,
-      home: child,
-    );
-  }
-
   testWidgets('WHO Myth Buster Page is rendered Properly (ar_SA)',
           (WidgetTester tester) async {
         // Increasing the default viewport size to avoid RenderFlex overflow error

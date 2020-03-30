@@ -9,20 +9,6 @@ void main() {
   final TestWidgetsFlutterBinding binding =
       TestWidgetsFlutterBinding.ensureInitialized();
 
-  Widget testableWidget({Widget child}) {
-    return MaterialApp(
-      title: "WHO",
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        S.delegate
-      ],
-      locale: Locale('en', ''),
-      supportedLocales: S.delegate.supportedLocales,
-      home: child,
-    );
-  }
-
   testWidgets('WHO Myth Buster Page is rendered Properly',
       (WidgetTester tester) async {
     // Increasing the default viewport size to avoid RenderFlex overflow error
